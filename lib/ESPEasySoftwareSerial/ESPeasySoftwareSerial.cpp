@@ -38,9 +38,9 @@ extern "C" {
 static ESPeasySoftwareSerial *ObjList[NR_CONCURRENT_SOFT_SERIALS];
 static uint8_t PinControllerMap[NR_CONCURRENT_SOFT_SERIALS]={}; // Zero all elements
 
-void ICACHE_RAM_ATTR sws_isr_0() { ObjList[0]->rxRead(); };
-void ICACHE_RAM_ATTR sws_isr_1() { ObjList[1]->rxRead(); };
-void ICACHE_RAM_ATTR sws_isr_2() { ObjList[2]->rxRead(); };
+//void ICACHE_RAM_ATTR sws_isr_0() { ObjList[0]->rxRead(); };
+//void ICACHE_RAM_ATTR sws_isr_1() { ObjList[1]->rxRead(); };
+//void ICACHE_RAM_ATTR sws_isr_2() { ObjList[2]->rxRead(); };
 /*void ICACHE_RAM_ATTR sws_isr_3() { ObjList[3]->rxRead(); };
 void ICACHE_RAM_ATTR sws_isr_4() { ObjList[4]->rxRead(); };
 void ICACHE_RAM_ATTR sws_isr_5() { ObjList[5]->rxRead(); };
@@ -51,10 +51,10 @@ void ICACHE_RAM_ATTR sws_isr_14() { ObjList[8]->rxRead(); };
 void ICACHE_RAM_ATTR sws_isr_15() { ObjList[9]->rxRead(); };
 */
 
-static void (*ISRList[NR_CONCURRENT_SOFT_SERIALS])() = {
+static void (*ISRList[NR_CONCURRENT_SOFT_SERIALS])() = {/*
       sws_isr_0,
       sws_isr_1,
-      sws_isr_2 /*,
+      sws_isr_2 ,
       sws_isr_3,
       sws_isr_4,
       sws_isr_5,
